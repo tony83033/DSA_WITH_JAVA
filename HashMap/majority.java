@@ -1,3 +1,5 @@
+
+//Given an Integer array of size n, find all elements that appear more than [n/3] times;
 import java.util.*;
 public class majority{
     public static void main(String args[]){
