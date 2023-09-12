@@ -1,18 +1,15 @@
+import java.util.*;
 class mergeShort{
-    public static void tackInput(int arr[]){
-        for(int i =0; i<arr.length;i++){
-            System.out.println("Enter "+i+"Element ");
-        }
-    }
-    public static void mergeShort(int arr[], int si, int ei){
-        if(si>ei){
+
+    public static void mergeshorting(int arr[], int si, int ei){
+        if(si>=ei){
             // base case
             return;
         }
         int mid = (si+ei)/2;
 
-        mergeShort(arr,si,mid);
-        mergeShort(arr,mid+1,ei)
+        mergeshorting(arr,si,mid);
+        mergeshorting(arr,mid+1,ei);
         
         mergeIt(arr,si,ei,mid);
     }
@@ -42,7 +39,8 @@ class mergeShort{
         }
     }
 
-    public static void printArray(int arr[]){
+    public static void printArray(int arr[],String msg){
+      System.out.println(msg);
         for(int i = 0; i<arr.length;i++){
             System.out.println(arr[i]);
         }
@@ -53,11 +51,14 @@ class mergeShort{
         int n;
         System.out.print("Enter the size of array");
         n=sc.nextInt();
-        int arr[] = new int[n]
-        tackInput(arr);
-        printArray(arr)
-        mergeShort(arr,0,arr.length-1);
-        printArray(arr);
+        int arr[] = new int[n];
+            for(int i =0; i<arr.length;i++){
+            System.out.println("Enter "+i+"Element ");
+          arr[i]=sc.nextInt();
+        }
+        printArray(arr,"Before ");
+        mergeshorting(arr,0,arr.length-1);
+        printArray(arr,"After");
 
 
     }
